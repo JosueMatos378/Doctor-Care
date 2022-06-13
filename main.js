@@ -1,10 +1,23 @@
+window.addEventListener('scroll', onScroll);
+onScroll();
 function onScroll() {
+  showNavOnScroll();
+  showBackToTopButtonOnScroll();
+}
+function showNavOnScroll() {
   var element = document.getElementById('navigation');
 
   if (scrollY > 0) {
     element.classList.add('scroll');
   } else {
     element.classList.remove('scroll');
+  }
+}
+function showBackToTopButtonOnScroll() {
+  if (scrollY > 400) {
+    backToTopButton.classList.add('show');
+  } else {
+    backToTopButton.classList.remove('show');
   }
 }
 function openMenu() {
